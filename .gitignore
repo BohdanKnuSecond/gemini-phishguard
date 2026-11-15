@@ -1,0 +1,12 @@
+# секрети
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# локальні файли, які не потрібні в репозиторії
+example_classmate_*.pdf
+out/
