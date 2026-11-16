@@ -1,4 +1,4 @@
-From: IT Support <helpdesk@micros0ft-account-security.com>
+﻿From: IT Support <helpdesk@micros0ft-account-security.com>
 Subject: Password expires today
 
 Your university mailbox password expires in 2 hours. To keep access, sign in and confirm your password here:

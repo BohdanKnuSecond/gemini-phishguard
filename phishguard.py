@@ -93,7 +93,7 @@ VERDICT_UA = {"phishing": "ФІШИНГ", "suspicious": "ПІДОЗРІЛО", "s
 # Консоль
 # ---------------------------------------------------------------------------
 
-USE_COLOR = sys.stdout.isatty() and not os.environ.get("NO_COLOR")
+USE_COLOR = (sys.stdout.isatty() or bool(os.environ.get("FORCE_COLOR"))) and not os.environ.get("NO_COLOR")
 if os.name == "nt":
     os.system("")  # вмикає ANSI-кольори у класичній консолі Windows
 for stream in (sys.stdout, sys.stderr):
@@ -289,7 +289,7 @@ def main() -> int:
                 path = Path(p)
                 if not path.is_file():
                     raise ApiError(f"Файл не знайдено: {p}")
-                inputs.append((path.name, path.read_text(encoding="utf-8")))
+                inputs.append((path.name, path.read_text(encoding="utf-8-sig")))
         if not inputs:
             parser.print_help()
             return 2
